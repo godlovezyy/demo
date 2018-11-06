@@ -14,7 +14,6 @@ public class HelloWorld {
         stu.setName("xxx");
 
         Stu li = new Stu("li", 10);
-
         System.out.println(stu);
 
         //打印对象的json字符串
@@ -22,6 +21,7 @@ public class HelloWorld {
 
         String jsonStr = stu.toJsonStr();
 
+        //文件读写
         FileHelper.writeFile(jsonStr,"/Users/leebin/b.txt");
 
         //解析json字符串
@@ -29,10 +29,8 @@ public class HelloWorld {
         Stu stu1 = gson.fromJson(jsonStr, Stu.class);
         System.out.println(stu1.getAge());
 
+        //文件读写
         List<String> lines = FileHelper.readFiles("/Users/leebin/a.txt");
         System.out.println(lines);
-
-
-
     }
 }
